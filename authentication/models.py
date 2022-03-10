@@ -44,17 +44,22 @@ class User(TrackingModel, AbstractBaseUser, PermissionsMixin):
     username_validator = UnicodeUsernameValidator()
 
     username = models.CharField(
-        _('username'), 
-        max_length=150, 
-        unique=True, 
-        help_text=_("Required. 150 charecters only!"), 
-        validators=[username_validator], 
-        error_messages={'unique': _("A user with that username already exists")},)
-    email = models.EmailField(_("email address"), blank=False, unique=True)
-    is_stuff = models.BooleanField(
-        _("staff status"),
+        _('username'),
+        max_length=150,
+        unique=True,
+        help_text=_(
+            'Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        validators=[username_validator],
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
+    )
+    email = models.EmailField(_('email address'), blank=False, unique=True)
+    is_staff = models.BooleanField(
+        _('staff status'),
         default=False,
-        help_text=_("User can be logged in as the stuff")
+        help_text=_(
+            'Designates whether the user can log into this admin site.'),
     )
     is_active = models.BooleanField(
         _("active"),
