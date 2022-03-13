@@ -45,4 +45,4 @@ A todo app with user authentication
    python manage.py runserver
    ```
    
-  <img src="https://github.com/barkhayot/todo-api-drf/blob/main/screencapture-localhost-8000-swagger-2022-03-13-15_26_57.jpg" width ="500" height="650"/>
+  <img src="https://github.com/barkhayot/todo-api-drf/blob/main/screencapture-localhost-8000-swagger-2022-03-13-15_26_57.jpg" width ="800" height="1000"/>
